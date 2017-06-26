@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Road extends JPanel implements Runnable {
-    boolean state;
+
     private int s = 0;
     private File file;
     private boolean gameOver;
