@@ -2,15 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class Player {
+class Player {
 
-    public static final int maxV = 30;
-    public static final int maxTOP = 30;
-    public static final int maxBOTTOM = 500;
+    static final int maxV = 30;
+    private static final int maxTOP = 30;
+    private static final int maxBOTTOM = 500;
 
-    Image img_c = new ImageIcon("Player.png").getImage();
-    Image img_UP = new ImageIcon("Player_Left.png").getImage();
-    Image img_DOWN = new ImageIcon("Player_Right.png").getImage();
+    private Image img_c = new ImageIcon("resource/Player.png").getImage();
+    private Image img_UP = new ImageIcon("resource/Player_Left.png").getImage();
+    private Image img_DOWN = new ImageIcon("resource/Player_Right.png").getImage();
 
     Image img = img_c;
 
@@ -20,12 +20,13 @@ public class Player {
     //координаты
     int x = 30;
     int y = 100;
-    int dy = 0;
+    private int dy = 0;
     //слои дороги
     int field1 = 0;
-    int field2 = 1200;
+    int field2 = 1199;
 
-    public void move() {
+    void move() {
+
         s += v;
         v += w;
 
@@ -48,11 +49,11 @@ public class Player {
         }
     }
 
-    public Rectangle getRect() {
+    Rectangle getRect() {
         return new Rectangle(x, y, 140, 40);
     }
 
-   public void keyPressed(KeyEvent e) { //есть ускорение
+   void keyPressed(KeyEvent e) { //есть ускорение
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
@@ -71,7 +72,7 @@ public class Player {
         }
     }
 
-    public void keyReleased(KeyEvent e) { //нет ускорения
+    void keyReleased(KeyEvent e) { //нет ускорения
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_RIGHT) {
             w = 0;
