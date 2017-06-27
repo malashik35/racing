@@ -8,15 +8,16 @@ class Player {
     private static final int maxTOP = 30;
     private static final int maxBOTTOM = 500;
 
+    //изображения позиции машины
     private Image img_c = new ImageIcon("resource/Player.png").getImage();
     private Image img_UP = new ImageIcon("resource/Player_Left.png").getImage();
     private Image img_DOWN = new ImageIcon("resource/Player_Right.png").getImage();
 
     Image img = img_c;
 
-    int v = 5; //speed
-    int w = 0; //uskor
-    int s = 0; //put
+    int v = 5; //скорость
+    int w = 0; //ускорение
+    int s = 0; //путь
     //координаты
     int x = 30;
     int y = 100;
@@ -24,7 +25,7 @@ class Player {
     //слои дороги
     int field1 = 0;
     int field2 = 1199;
-
+    //задаем движение машины
     void move() {
 
         s += v;
@@ -53,7 +54,7 @@ class Player {
         return new Rectangle(x, y, 140, 40);
     }
 
-   void keyPressed(KeyEvent e) { //есть ускорение
+    void keyPressed(KeyEvent e) { //есть ускорение
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {

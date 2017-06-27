@@ -4,21 +4,19 @@ import java.awt.*;
 class Opponent {
     int x;
     int y;
-    int v;
+    private int v;
     Image img = new ImageIcon("resource/r.png").getImage();
-    Road road;
 
     Rectangle getRect() {
         return new Rectangle(x, y, 140, 50);
     }
 
-    Opponent(int x, int y, int v, Road road) {
+    Opponent(int x, int y, int v) {
         this.x = x;
         this.y = y;
         this.v = v;
-        this.road = road;
     }
-
+    //задаем скорость оппонента
     void move() {
         x -= v;
     }
